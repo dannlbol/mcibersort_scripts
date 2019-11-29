@@ -55,7 +55,7 @@ This function creates a matrix of proportions for a given set of data population
 ### Note on functionality:
 The function populates the proportion table by column, with each population being assigned a set sequence of probabilities. A typical example for 3 populations, 6 rows per population
 
-![Synth Mix Example](/synth_mix_example.png | height=480)
+<img src="/synth_mix_example.png" width="480">
 
 # System Requirements
 ## Hardware Requirements
