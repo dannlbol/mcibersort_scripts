@@ -7,6 +7,7 @@ Custom scripts used within "Pediatric Pan-CNS Tumor Analysis of Immune-cell Infi
 - [System Requirements](#system-requirements)
 - [Hardware requirements](#hardware-requirements)
 - [Software Requirements](#software-requirements)
+- [Usage Guide](#usage-guide)
 - [Issues](https://github.com/dannlbol/mcibersort_scripts/issues)
 
 # Overview
