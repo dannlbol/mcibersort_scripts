@@ -124,3 +124,8 @@ b <- Sys.time()
 b-a
 ## Time difference of 1.76159 secs
 ```
+
+Example Outputs
+```
+Example outputs generated from running the above usage examples included for comparison within example_outputs.zip
+```
