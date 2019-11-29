@@ -26,7 +26,9 @@ This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBER
 
 ### Additional parmeters:
 **useM**: specify whether conversion to M-values should be done before carrying out feature seletion
+
 **export.fit**: whether to export the `limma` fit object during the feature selection
+
 **export.cpg**: whether to export a table of the CpG probes selected alongside the name the name of the population which they were selected agaist
 
 ### Typical outputs:
@@ -42,10 +44,15 @@ This function creates a matrix of proportions for a given set of data population
 
 ### Parameters:
 **input.data**: a matrix of data, typically beta-values; rows = features (probes), columns = observations (samples)
+
 **pop.factor**: a factor with levels describing the populations in input.data columns
+
 **pop.rows**: numeric specifying how many rows of proportions to generate for each population
+
 **output.dir**: location to save the resulting files
+
 **output.name**: name to append to the resulting filenames
+
 **n.cores**: set to >1 to run on multiple cores in parallel using `parallel::mcapply()`
 
 ### Typical outputs:
