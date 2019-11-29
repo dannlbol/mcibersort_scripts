@@ -63,7 +63,7 @@ Functions provided here are compatible with any standard computer with enough RA
 The functions are supported on any operating system which supports `MethylCIBERSORT 0.2.1`
 
 ## Software Requirements
-Functions provided import and depend on a number of R packages. Functionality has been tested on *R 3.5.3* *Ubuntu 16.04.5* LTS*
+Functions provided import and depend on a number of R packages. Functionality has been tested on *R 3.5.3* with *Ubuntu 16.04.5 LTS*
 ### R Dependencies
 `MethylCIBERSORT 0.2.1` was obtained by correspondence from Dr Ankur Chakravarthy.
 
