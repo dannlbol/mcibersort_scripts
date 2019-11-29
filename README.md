@@ -11,10 +11,13 @@ Custom scripts used within "Pediatric Pan-CNS Tumor Analysis of Immune-cell Infi
 - [Issues](https://github.com/dannlbol/mcibersort_scripts/issues)
 
 # Overview
-Text
+The functions provided serve two main purposes:
+
+* facilitate and extend the 'feature selection' functionality of the `MethylCIBERSORT` R software package
+* facilitate benchmarking of resulting signature matrix by generating *synthetic mixtures* of test populations with known input proportions 
 
 # Documentation
-Text
+
 
 # System Requirements
 ## Hardware Requirements
