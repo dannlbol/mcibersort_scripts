@@ -22,7 +22,7 @@ The functions provided serve two main purposes:
 ## feature.select.new
 This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBERSORT 0.2.1`
 ### Default function call:
-`function(MaxDMPs = 100, deltaBeta = 0.2, useM = FALSE, CellLines.matrix = NULL, export = TRUE, export.fit = TRUE, export.cpg = TRUE, sigName = "methylCibersort", Stroma.matrix = NULL, Phenotype.stroma = NULL, FDR = 0.01, silent = TRUE)`
+`feature.select.new(MaxDMPs = 100, deltaBeta = 0.2, useM = FALSE, CellLines.matrix = NULL, export = TRUE, export.fit = TRUE, export.cpg = TRUE, sigName = "methylCibersort", Stroma.matrix = NULL, Phenotype.stroma = NULL, FDR = 0.01, silent = TRUE)`
 
 ### Additional parmeters:
 **useM**: specify whether conversion to M-values should be done before carrying out feature seletion
