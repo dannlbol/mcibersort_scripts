@@ -52,6 +52,11 @@ This function creates a matrix of proportions for a given set of data population
 * .txt file of the resulting porportions matrix
 * .txt file of the resulting mixtures
 
+### Note on functionality:
+The function populates the proportion table by column, with each population being assigned a set sequence of probabilities. A typical example for 3 populations, 6 rows per population
+
+![GitHub Logo](/synth_mix_example.png)
+
 # System Requirements
 ## Hardware Requirements
 Functions provided here are compatible with any standard computer with enough RAM to support the in-memory operations.
