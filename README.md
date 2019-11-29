@@ -21,7 +21,7 @@ The functions provided serve two main purposes:
 # Documentation
 ## feature.select.new
 This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBERSORT 0.2.1`
-###Default function call:
+### Default function call:
 `function(MaxDMPs = 100, deltaBeta = 0.2, useM = FALSE, CellLines.matrix = NULL, export = TRUE, export.fit = TRUE, export.cpg = TRUE, sigName = "methylCibersort", Stroma.matrix = NULL, Phenotype.stroma = NULL, FDR = 0.01, silent = TRUE)`
 
 ### Additional parmeters:
@@ -37,7 +37,7 @@ This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBER
 
 ## make.synth.mix
 This function creates a matrix of proportions for a given set of data populations and generates weighted means based on those proportions for a given matrix of values, typically methylation array beta-values.
-###Default function call:
+### Default function call:
 `make.synth.mix(input.data = NULL, pop.factor = NULL, pop.rows = 100, output.dir = getwd(), output.name = gsub("-", "_", Sys.Date()), n.cores = 1)`
 
 ### Parameters:
