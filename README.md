@@ -25,11 +25,11 @@ This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBER
 `feature.select.new(MaxDMPs = 100, deltaBeta = 0.2, useM = FALSE, CellLines.matrix = NULL, export = TRUE, export.fit = TRUE, export.cpg = TRUE, sigName = "methylCibersort", Stroma.matrix = NULL, Phenotype.stroma = NULL, FDR = 0.01, silent = TRUE)`
 
 ### Additional parmeters:
-**useM**: specify whether conversion to M-values should be done before carrying out feature seletion
+**useM**: specify whether conversion to M-values should be done before carrying out feature selection
 
 **export.fit**: whether to export the `limma` fit object during the feature selection
 
-**export.cpg**: whether to export a table of the CpG probes selected alongside the name the name of the population which they were selected agaist
+**export.cpg**: whether to export a table of the CpG probes selected alongside the name of the population which they were selected agaist
 
 ### Typical outputs:
 * .txt file of the resulting signature matrix
