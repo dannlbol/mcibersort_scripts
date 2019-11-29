@@ -4,8 +4,8 @@ Custom scripts used within "Pediatric Pan-CNS Tumor Analysis of Immune-cell Infi
 
 - [Overview](#overview)
 - [Documentation](#documentation)
-- [feature.select.new)(#feature.select.new)
-- [make.synth.mix)(#make.synth.mix)
+- [feature.select.new](#feature.select.new)
+- [make.synth.mix](#make.synth.mix)
 - [System Requirements](#system-requirements)
 - [Hardware requirements](#hardware-requirements)
 - [Software Requirements](#software-requirements)
