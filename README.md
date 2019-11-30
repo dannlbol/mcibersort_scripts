@@ -79,19 +79,19 @@ The functions are supported on any operating system which supports `MethylCIBERS
 Functions provided import and depend on a number of R packages. Functionality has been tested on *R 3.5.3* with *Ubuntu 16.04.5 LTS*
 ### R Dependencies
 `MethylCIBERSORT 0.2.1` was obtained by correspondence from Dr Ankur Chakravarthy.
+Other dependencies
 
-```
-magrittr
-matrixStats
-BiocGenerics
-limma
-dplyr
-minfi
-parallel
-minfiData
-MethylCIBERSORT
-IlluminaHumanMethylation450kmanifest
-```
+`magrittr`
+`matrixStats`
+`BiocGenerics`
+`limma`
+`dplyr`
+`minfi`
+`parallel`
+`minfiData`
+`MethylCIBERSORT`
+`IlluminaHumanMethylation450kmanifest`
+
 
 # Usage Guide:
 ## Feature selection example:
@@ -108,7 +108,7 @@ feature.select.new(Stroma.matrix = bvals,
                    sigName = "test")
 b <- Sys.time()
 b-a
-# Time difference of 1.55212 mins
+# Time difference of 3.629949 mins
 ```
 
 ## Generating *synthetic mixtures* example:
@@ -132,11 +132,15 @@ b-a
 ## Example CIBERSORT analysis
 ```
 source("CIBERSORT.R") ## code available upon request from https://cibersort.stanford.edu/
+a <- Sys.time()
 results <- CIBERSORT(sig_matrix = "/test_0.2_100_Signature.txt",
                      mixture_file = "/2019_11_29_synth_mix.txt", 
                      perm = 1000, 
                      QN = FALSE,
                      absolute = FALSE)
+b <- Sys.time()
+b-a
+## Time difference of 10.40594 mins
 ```
 
 ## Example Outputs
