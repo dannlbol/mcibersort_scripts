@@ -94,8 +94,7 @@ IlluminaHumanMethylation450kmanifest
 ```
 
 # Usage Guide:
-
-Feature selection example:
+## Feature selection example:
 ```
 source("./feature_select_WORKING_2019.R")
 require(FlowSorted.Blood.450k)
@@ -112,7 +111,7 @@ b-a
 # Time difference of 1.55212 mins
 ```
 
-Generating *synthetic mixtures* example:
+## Generating *synthetic mixtures* example:
 ```
 source("./synth_mix_2019.R")
 require(FlowSorted.Blood.450k)
@@ -130,8 +129,16 @@ b <- Sys.time()
 b-a
 ## Time difference of 1.76159 secs
 ```
+Example CIBERSORT analysis
+```
+source("CIBERSORT.R") ## code available upon request from https://cibersort.stanford.edu/
+results <- CIBERSORT(sig_matrix = "/test_0.2_100_Signature.txt",
+                     mixture_file = "/2019_11_29_synth_mix.txt", 
+                     perm = 1000, 
+                     QN = FALSE,
+                     absolute = FALSE)
+```
 
-Example Outputs
-```
-Example outputs generated from running the above usage examples included for comparison within example_outputs.zip
-```
+## Example Outputs
+Example outputs generated from running the above usage examples included for comparison within [Example Outputs](https://github.com/dannlbol/mcibersort_scripts/blob/master/example_outputs.zip "example_outputs.zip")
+
