@@ -65,5 +65,6 @@ make.synth.mix <- function(input.data = NULL,                                  #
   write.table(synth.df, 
               paste0(output.dir, "/", output.name, "_synth_mix.txt"), 
               quote = FALSE, 
-              row.names = TRUE)
+              row.names = TRUE,
+              sep = "\t")
 } # end function 
