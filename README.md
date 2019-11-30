@@ -97,6 +97,8 @@ Other dependencies
 ## Example Outputs
 Example outputs generated from running the below usage examples included for comparison within [Example Outputs](https://github.com/dannlbol/mcibersort_scripts/blob/master/example_outputs.zip "example_outputs.zip")
 
+The final signature generated as part of our study is available to download - [Final Signature](https://github.com/dannlbol/mcibersort_scripts/blob/master/OPT2_0.2_200_SigEdit.txt "Study Signature")
+
 ## Feature selection example:
 ```
 source("./feature_select_WORKING_2019.R")
