@@ -1,6 +1,6 @@
 # Support functions for MethylCIBERSORT
 
-Custom scripts used within "Pediatric Pan-CNS Tumor Analysis of Immune-cell Infiltration Identifies Correlates of Antitumor Immunity" by Grabovska et al. (2019) 
+Custom scripts used within "Pediatric Pan-CNS Tumor Analysis of Immune-cell Infiltration Identifies Correlates of Antitumor Immunity" by Grabovska et al. (2019)
 
 - [Overview](#overview)
 - [Documentation](#documentation)
@@ -16,7 +16,7 @@ Custom scripts used within "Pediatric Pan-CNS Tumor Analysis of Immune-cell Infi
 The functions provided serve two main purposes:
 
 * `feature.select.new()`: facilitate and extend the 'feature selection' functionality of the `MethylCIBERSORT` R software package
-* `make.synth.mix()`: facilitate benchmarking of resulting signature matrix by generating *synthetic mixtures* of test populations with known input proportions 
+* `make.synth.mix()`: facilitate benchmarking of resulting signature matrix by generating *synthetic mixtures* of test populations with known input proportions
 
 # Documentation
 ## feature.select.new
@@ -24,12 +24,19 @@ This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBER
 ### Default function call:
 `feature.select.new(MaxDMPs = 100, deltaBeta = 0.2, useM = FALSE, CellLines.matrix = NULL, export = TRUE, export.fit = TRUE, export.cpg = TRUE, sigName = "methylCibersort", Stroma.matrix = NULL, Phenotype.stroma = NULL, FDR = 0.01, silent = TRUE)`
 
-### Additional parameters:
-**useM**: specify whether conversion to M-values should be done before carrying out feature seletion
-
+### Parameters:
+**MaxDMPs**: maximum differentially methylated probes to use, takes n/2 from top & n/2 from bottom
+**deltaBeta**: cutoff for the minimum difference between pairwise groups by delta-beta
+**useM**: specify whether conversion to M-values should be done before carrying out feature selection
+**CellLines.matrix**: input matrix for cell line 'cancer' data
+**export**: save a table of signature results
 **export.fit**: whether to export the `limma` fit object during the feature selection
-
-**export.cpg**: whether to export a table of the CpG probes selected alongside the name the name of the population which they were selected agaist
+**export.cpg**: whether to export a table of the CpG probes selected alongside the name  of the population which they were selected against
+**sigName**: name appended to start of filename
+**Stroma.matrix**: matrix of betas for populations
+**Phenotype.stroma**: pheno that corresponds to Stroma.matrix
+**FDR**: FDR cutoff
+**silent**: run function without returning output
 
 ### Typical outputs:
 * .txt file of the resulting signature matrix
@@ -62,7 +69,7 @@ This function creates a matrix of proportions for a given set of data population
 **n.cores**: set to >1 to run on multiple cores in parallel using `parallel::mcapply()`
 
 ### Typical outputs:
-* .txt file of the resulting porportions matrix
+* .txt file of the resulting proportions matrix
 * .txt file of the resulting mixtures
 
 ### Note on functionality:
@@ -79,19 +86,19 @@ The functions are supported on any operating system which supports `MethylCIBERS
 Functions provided import and depend on a number of R packages. Functionality has been tested on *R 3.5.3* with *Ubuntu 16.04.5 LTS*
 ### R Dependencies
 `MethylCIBERSORT 0.2.1` was obtained by correspondence from Dr Ankur Chakravarthy.
-Other dependencies
 
-`magrittr`
-`matrixStats`
-`BiocGenerics`
-`limma`
-`dplyr`
-`minfi`
-`parallel`
-`minfiData`
-`MethylCIBERSORT`
-`IlluminaHumanMethylation450kmanifest`
-
+```
+magrittr
+matrixStats
+BiocGenerics
+limma
+dplyr
+minfi
+parallel
+minfiData
+MethylCIBERSORT
+IlluminaHumanMethylation450kmanifest
+```
 
 # Usage Guide:
 ## Example Outputs
@@ -111,9 +118,7 @@ a <- Sys.time()
 feature.select.new(Stroma.matrix = bvals,
                    Phenotype.stroma = as.factor(FlowSorted.Blood.450k$CellType[idx]),
                    sigName = "test")
-b <- Sys.time()
-b-a
-# Time difference of 3.629949 mins
+# Time difference of 1.55212 mins
 ```
 
 ## Generating *synthetic mixtures* example:
@@ -122,28 +127,35 @@ source("./synth_mix_2019.R")
 require(FlowSorted.Blood.450k)
 idx <- which(FlowSorted.Blood.450k$CellType %in% c("Bcell","CD4T","CD8T","NK"))
 bvals <- getBeta(FlowSorted.Blood.450k[, idx])
-b.sig <- read.delim("test_0.2_100_Signature.txt", row.names = 1, header = TRUE)
+b.sig <- read.delim("./test_0.2_100_Signature.txt", row.names = 1, header = TRUE)
 bvals <- bvals[rownames(b.sig), ]
 all(rownames(bvals)==rownames(b.sig))
 a <- Sys.time()
 make.synth.mix(input.data = bvals,
                pop.factor = as.factor(FlowSorted.Blood.450k$CellType[idx]),
                pop.rows = 10,
-               n.cores = 1)
+               n.cores = 1,
+               output.name = "test")
 b <- Sys.time()
 b-a
 ## Time difference of 1.76159 secs
 ```
 ## Example CIBERSORT analysis
 ```
-source("CIBERSORT.R") ## code available upon request from https://cibersort.stanford.edu/
-a <- Sys.time()
-results <- CIBERSORT(sig_matrix = "/test_0.2_100_Signature.txt",
-                     mixture_file = "/2019_11_30_synth_mix.txt", 
-                     perm = 1000, 
+source("./CIBERSORT.R") ## code available upon request from https://cibersort.stanford.edu/
+results <- CIBERSORT(sig_matrix = "./test_0.2_100_Signature.txt",
+                     mixture_file = "./test_synth_mix.txt",
+                     perm = 1000,
                      QN = FALSE,
-                     absolute = FALSE)
-b <- Sys.time()
-b-a
+                     absolute = FALSE,
+                     abs_method = 'sig.score')
 ## Time difference of 10.40594 mins
+
+## this is not a real world example we provide here the full signature generated and used in our study run something like this...
+# results <-CIBERSORT(sig_matrix = "./OPT2_0.2_200_SigEdit.txt", ## the signature from our study
+#                    mixture_file = "a_mixture_file_from_CNS_tumours.txt", ## make your own beta-matrix
+#                    perm = 1000,
+#                    QN = F,
+#                    absolute = F,
+#                    abs_method = 'sig.score')
 ```
