@@ -20,7 +20,7 @@ The functions provided serve two main purposes:
 
 # Documentation
 ## feature.select.new
-This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBERSORT 0.2.1`
+This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBERSORT 0.2.1 written by Dr Ankur Chakravarthy`
 ### Default function call:
 `feature.select.new(MaxDMPs = 100, deltaBeta = 0.2, useM = FALSE, CellLines.matrix = NULL, export = TRUE, export.fit = TRUE, export.cpg = TRUE, sigName = "methylCibersort", Stroma.matrix = NULL, Phenotype.stroma = NULL, FDR = 0.01, silent = TRUE)`
 
