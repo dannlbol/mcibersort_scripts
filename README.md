@@ -134,7 +134,7 @@ b-a
 source("CIBERSORT.R") ## code available upon request from https://cibersort.stanford.edu/
 a <- Sys.time()
 results <- CIBERSORT(sig_matrix = "/test_0.2_100_Signature.txt",
-                     mixture_file = "/2019_11_29_synth_mix.txt", 
+                     mixture_file = "/2019_11_30_synth_mix.txt", 
                      perm = 1000, 
                      QN = FALSE,
                      absolute = FALSE)
