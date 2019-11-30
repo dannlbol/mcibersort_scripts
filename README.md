@@ -38,7 +38,7 @@ This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBER
 * .txt file of the Illumina/`minfi` CpG annotations for the relevant CpGs
 
 ### Note on functionality
-The typical funcrion workflow is shown below, various set and optional arguments are shown in **bold**:
+The typical function workflow is shown below, various set and optional arguments are shown in **bold**:
 
 <img src="/feature_select_process.png" width="840">
 
