@@ -162,9 +162,9 @@ results <- CIBERSORT(sig_matrix = "./test_0.2_100_Signature.txt",
                      abs_method = 'sig.score')
 ## Time difference of 10.40594 mins
 
-## this is not a real world example we provide here the full signature generated and used in our study run something like this...
+## the above is not a real world example however we provide here the full signature generated and used in our study and we typically run something like this...
 # results <-CIBERSORT(sig_matrix = "./OPT2_0.2_200_SigEdit.txt", ## the signature from our study
-#                    mixture_file = "a_mixture_file_from_CNS_tumours.txt", ## make your own beta-matrix
+#                    mixture_file = "a_mixture_file_from_CNS_tumours.txt", ## i.e. make your own beta matrix
 #                    perm = 1000,
 #                    QN = F,
 #                    absolute = F,
