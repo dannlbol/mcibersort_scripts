@@ -94,6 +94,9 @@ Other dependencies
 
 
 # Usage Guide:
+## Example Outputs
+Example outputs generated from running the below usage examples included for comparison within [Example Outputs](https://github.com/dannlbol/mcibersort_scripts/blob/master/example_outputs.zip "example_outputs.zip")
+
 ## Feature selection example:
 ```
 source("./feature_select_WORKING_2019.R")
@@ -142,7 +145,3 @@ b <- Sys.time()
 b-a
 ## Time difference of 10.40594 mins
 ```
-
-## Example Outputs
-Example outputs generated from running the above usage examples included for comparison within [Example Outputs](https://github.com/dannlbol/mcibersort_scripts/blob/master/example_outputs.zip "example_outputs.zip")
-
