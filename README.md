@@ -40,7 +40,7 @@ This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBER
 ### Note on functionality
 The typical function workflow is shown below, various set and optional arguments are shown in **bold**:
 
-<img src="/feature_select_process.png" width="840">
+<img src="/feature_select_process.png" width="880">
 
 
 ## make.synth.mix
