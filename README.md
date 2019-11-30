@@ -153,7 +153,7 @@ b-a
 ```
 ## Example CIBERSORT analysis
 ```
-source("./CIBERSORT.R") ## code available upon request from https://cibersort.stanford.edu/
+source("./CIBERSORT.R") ## code available under license upon request from https://cibersort.stanford.edu/
 results <- CIBERSORT(sig_matrix = "./test_0.2_100_Signature.txt",
                      mixture_file = "./test_synth_mix.txt",
                      perm = 1000,
