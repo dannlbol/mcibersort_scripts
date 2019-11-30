@@ -37,6 +37,12 @@ This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBER
 * .txt file of CpGs selected and the comparison from which they were chosen
 * .txt file of the Illumina/`minfi` CpG annotations for the relevant CpGs
 
+### Note on functionality
+The typical funcrion workflow is shown below, various set and optional arguments are shown in **bold**:
+
+<img src="/feature_select_process.png" width="640">
+
+
 ## make.synth.mix
 This function creates a matrix of proportions for a given set of data populations and generates weighted means based on those proportions for a given matrix of values, typically methylation array beta-values.
 ### Default function call:
