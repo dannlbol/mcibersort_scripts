@@ -129,7 +129,7 @@ b <- Sys.time()
 b-a
 ## Time difference of 1.76159 secs
 ```
-Example CIBERSORT analysis
+## Example CIBERSORT analysis
 ```
 source("CIBERSORT.R") ## code available upon request from https://cibersort.stanford.edu/
 results <- CIBERSORT(sig_matrix = "/test_0.2_100_Signature.txt",
