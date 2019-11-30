@@ -26,16 +26,27 @@ This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBER
 
 ### Parameters:
 **MaxDMPs**: maximum differentially methylated probes to use, takes n/2 from top & n/2 from bottom
+
 **deltaBeta**: cutoff for the minimum difference between pairwise groups by delta-beta
+
 **useM**: specify whether conversion to M-values should be done before carrying out feature selection
+
 **CellLines.matrix**: input matrix for cell line 'cancer' data
+
 **export**: save a table of signature results
+
 **export.fit**: whether to export the `limma` fit object during the feature selection
+
 **export.cpg**: whether to export a table of the CpG probes selected alongside the name  of the population which they were selected against
+
 **sigName**: name appended to start of filename
+
 **Stroma.matrix**: matrix of betas for populations
+
 **Phenotype.stroma**: pheno that corresponds to Stroma.matrix
+
 **FDR**: FDR cutoff
+
 **silent**: run function without returning output
 
 ### Typical outputs:
