@@ -117,7 +117,7 @@ source("./synth_mix_2019.R")
 require(FlowSorted.Blood.450k)
 idx <- which(FlowSorted.Blood.450k$CellType %in% c("Bcell","CD4T","CD8T","NK"))
 bvals <- getBeta(FlowSorted.Blood.450k[, idx])
-b.sig <- read.delim("OPT2_0.2_200_SigEdit.txt", row.names = 1, header = TRUE)
+b.sig <- read.delim("test_0.2_100_Signature.txt", row.names = 1, header = TRUE)
 bvals <- bvals[rownames(b.sig), ]
 all(rownames(bvals)==rownames(b.sig))
 a <- Sys.time()
