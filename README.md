@@ -20,7 +20,7 @@ The functions provided serve two main purposes:
 
 # Documentation
 ## feature.select.new
-This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBERSORT 0.2.1 written by Dr Ankur Chakravarthy`
+This function mimics the functionality of `FeatureSelect.V4()` from `MethylCIBERSORT 0.2.1` written by Dr Ankur Chakravarthy
 ### Default function call:
 `feature.select.new(MaxDMPs = 100, deltaBeta = 0.2, useM = FALSE, CellLines.matrix = NULL, export = TRUE, export.fit = TRUE, export.cpg = TRUE, sigName = "methylCibersort", Stroma.matrix = NULL, Phenotype.stroma = NULL, FDR = 0.01, silent = TRUE)`
 
@@ -129,6 +129,8 @@ a <- Sys.time()
 feature.select.new(Stroma.matrix = bvals,
                    Phenotype.stroma = as.factor(FlowSorted.Blood.450k$CellType[idx]),
                    sigName = "test")
+b <- Sys.time()
+b-a
 # Time difference of 1.55212 mins
 ```
 
@@ -153,6 +155,7 @@ b-a
 ```
 ## Example CIBERSORT analysis
 ```
+a <- Sys.time()
 source("./CIBERSORT.R") ## code available under license upon request from https://cibersort.stanford.edu/
 results <- CIBERSORT(sig_matrix = "./test_0.2_100_Signature.txt",
                      mixture_file = "./test_synth_mix.txt",
@@ -160,6 +163,8 @@ results <- CIBERSORT(sig_matrix = "./test_0.2_100_Signature.txt",
                      QN = FALSE,
                      absolute = FALSE,
                      abs_method = 'sig.score')
+b <- Sys.time()
+b-a
 ## Time difference of 10.40594 mins
 
 ## the above is not a real world example however we provide here the full signature generated and used in our study and we typically run something like this...
